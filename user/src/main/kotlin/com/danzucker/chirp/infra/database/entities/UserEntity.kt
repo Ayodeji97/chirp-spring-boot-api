@@ -1,6 +1,6 @@
-package com.danzucker.user.infra.database.entities
+package com.danzucker.chirp.infra.database.entities
 
-import com.danzucker.user.domain.model.UserId
+import com.danzucker.chirp.domain.model.UserId
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

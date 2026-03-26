@@ -9,7 +9,7 @@ This is the start of the **User Service** module. It introduces the concept of *
 ### `User.kt` — The Core User Model
 
 ```kotlin
-package com.danzucker.user.domain.model
+package com.danzucker.chirp.domain.model
 
 import java.util.UUID
 
@@ -36,7 +36,7 @@ data class User(
 ### `AuthenticatedUser.kt` — Authenticated Session Model
 
 ```kotlin
-package com.danzucker.user.domain.model
+package com.danzucker.chirp.domain.model
 
 data class AuthenticatedUser(
     val user: User,

@@ -1,4 +1,4 @@
-package com.danzucker.user.domain.model
+package com.danzucker.chirp.domain.model
 
 data class AuthenticatedUser(
     val user: User,
