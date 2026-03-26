@@ -1,4 +1,4 @@
-package com.danzucker.user.domain.model
+package com.danzucker.chirp.domain.model
 
 import java.util.UUID
 

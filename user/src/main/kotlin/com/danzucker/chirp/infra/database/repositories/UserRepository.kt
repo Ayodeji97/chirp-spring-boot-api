@@ -1,7 +1,7 @@
-package com.danzucker.user.infra.database.repositories
+package com.danzucker.chirp.infra.database.repositories
 
-import com.danzucker.user.domain.model.UserId
-import com.danzucker.user.infra.database.entities.UserEntity
+import com.danzucker.chirp.domain.model.UserId
+import com.danzucker.chirp.infra.database.entities.UserEntity
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface UserRepository : JpaRepository<UserEntity, UserId> {
