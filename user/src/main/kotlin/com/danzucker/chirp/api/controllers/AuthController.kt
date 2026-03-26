@@ -2,6 +2,7 @@ package com.danzucker.chirp.api.controllers
 
 import com.danzucker.chirp.api.dto.AuthenticatedUserDto
 import com.danzucker.chirp.api.dto.LoginRequest
+import com.danzucker.chirp.api.dto.RefreshRequest
 import com.danzucker.chirp.api.dto.RegisterRequest
 import com.danzucker.chirp.api.dto.UserDto
 import com.danzucker.chirp.api.mappers.toAuthenticatedUserDto
@@ -36,5 +37,14 @@ class AuthController(private val authService: AuthService) {
             email = body.email,
             password = body.password
         ).toAuthenticatedUserDto()
+    }
+
+    @PostMapping("/refresh")
+    fun refresh(
+        @RequestBody body: RefreshRequest
+    ): AuthenticatedUserDto {
+        return authService
+            .refresh(body.refreshToken)
+            .toAuthenticatedUserDto()
     }
 }
