@@ -2,6 +2,7 @@ package com.danzucker.chirp.api.exception_handling
 
 import com.danzucker.chirp.domain.exception.EmailNotVerifiedException
 import com.danzucker.chirp.domain.exception.InvalidCredentialsException
+import com.danzucker.chirp.domain.exception.SamePasswordException
 import com.danzucker.chirp.domain.exception.InvalidTokenException
 import com.danzucker.chirp.domain.exception.UserAlreadyExistsException
 import com.danzucker.chirp.domain.exception.UserNotFoundException
@@ -48,6 +49,15 @@ class AuthExceptionHandler {
         e: EmailNotVerifiedException
     ) = mapOf(
         "code" to "EMAIL_NOT_VERIFIED",
+        "message" to e.message
+    )
+
+    @ExceptionHandler(SamePasswordException::class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    fun onSamePassword(
+        e: SamePasswordException
+    ) = mapOf(
+        "code" to "SAME_PASSWORD",
         "message" to e.message
     )
 
